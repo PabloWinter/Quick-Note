@@ -5,6 +5,7 @@ const path = require('path');
 const methodOverride = require('method-override');
 const session = require('express-session');
 
+// database connection from database.js
 require('./database');
 
 
@@ -35,7 +36,7 @@ app.use(require('./routes/notes'));
 app.use(require('./routes/users'));
 
 // Serve static files
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public/')));
 
 // Server is listening on port 8000
 app.listen(app.get('port'), () => {

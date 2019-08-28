@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 
 router.get('/', (req, res) => {
-    res.send("Main Page");
+    res.render('index.hbs');
 })
 
 
