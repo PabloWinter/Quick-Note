@@ -34,8 +34,9 @@ router.post('/notes/new-note', async (req, res) => {
 });
 
 // Gets all user notes from database
-router.get('/notes', (req, res) => {
-    res.render('notes');
+router.get('/notes', async (req, res) => {
+    const userNotes = await Note.find().sort({date: 'desc'});
+    res.render('all-notes', { userNotes });
 });
 
 
