@@ -1,12 +1,22 @@
+{{#each errorhandler}}
+<div class="alert alert-warning" role="alert">
+   {{ text }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/each}}
+
+
 <div class="card border-primary mb-3 mx-auto mt-5" style="max-width: 30rem;">
     <div class="card-header border-primary">Create a new note</div>
     <div class="card-body">
-        <form action="/">
+        <form action="/notes/new-note" method="POST">
             <div class="form-group">
                 <input type="text" name="title" placeholder="Title" class="form-control" autofocus/>
             </div>
             <div class="form-group">
-                <textarea type="text" name="description" placeholder="Description" class="form-control"></textarea>
+                <textarea type="text" name="description" placeholder="Description"  class="form-control"></textarea>
             </div>
             <div class="form-group">
                 <button class="btb btn-primary btn-block" type="submit">Create </button>
