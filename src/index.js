@@ -5,6 +5,8 @@ const path = require('path');
 const methodOverride = require('method-override');
 const session = require('express-session');
 
+require('./database');
+
 
 // Application settings 
 app.set('port', process.env.PORT || 8000);
@@ -32,6 +34,8 @@ app.use(require('./routes/index'));
 app.use(require('./routes/notes'));
 app.use(require('./routes/users'));
 
+// Serve static files
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Server is listening on port 8000
 app.listen(app.get('port'), () => {
