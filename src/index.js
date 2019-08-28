@@ -23,7 +23,7 @@ app.set('view engine', '.hbs');
 
 // Middlewares
 app.use(express.urlencoded({extended: false}));
-app.use(methodOverride('method'));
+app.use(methodOverride('_method'));
 app.use(session({
     secret: 'secret',
     resave: true,
